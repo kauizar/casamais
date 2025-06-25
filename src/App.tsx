@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, MapPin, Instagram, MessageCircle, User, Package, Calendar, CheckCircle, X, Plus, AlertTriangle } from 'lucide-react';
+import { Phone, MapPin, Instagram, MessageCircle, User, Package, Calendar, CheckCircle, X, Plus, AlertTriangle, Wrench, Hammer, Drill } from 'lucide-react';
 
 type Vendor = 'Felipe' | 'João' | 'Kauan' | 'Rodrigo' | 'Guilherme';
 
@@ -82,9 +82,16 @@ function App() {
 
   const [newMissingItem, setNewMissingItem] = useState('');
 
-  const brands = [
-    'Starret', 'Quartzolit', 'Hydronorth', 'Suvinil', 
-    'Irwin', 'Tramontina', 'Astra', 'Votoran', 'Cauê'
+  const brandLogos = [
+    { name: 'Quartzolit', logo: '/new-logo-quartzolit_0.png' },
+    { name: 'Irwin', logo: '/irwin-logo.png' },
+    { name: 'Lorenzetti', logo: '/lorenzetti.png' },
+    { name: 'Cauê', logo: '/193312-auto-262.png' },
+    { name: 'Astra', logo: '/images (2).png' },
+    { name: 'Tramontina', logo: null },
+    { name: 'Votoran', logo: null },
+    { name: 'Hydronorth', logo: null },
+    { name: 'Suvinil', logo: null }
   ];
 
   const vendors: Vendor[] = ['Felipe', 'João', 'Kauan', 'Rodrigo', 'Guilherme'];
@@ -102,6 +109,7 @@ function App() {
     const delivery: Delivery = {
       id: Date.now().toString(),
       ...newDelivery,
+      clientPhone: '',
       registrationDate: today,
       vendor: selectedVendor,
       status: 'pending'
@@ -151,12 +159,22 @@ function App() {
   if (currentPage === 'home') {
     return (
       <div className="min-h-screen bg-gray-800">
-        {/* Header - Menor */}
-        <header className="bg-blue-900 text-white shadow-xl">
-          <div className="container mx-auto px-6 py-4">
+        {/* Header - Maior com ferramentas decorativas */}
+        <header className="bg-blue-900 text-white shadow-xl relative overflow-hidden">
+          {/* Ferramentas decorativas */}
+          <div className="absolute inset-0 opacity-10">
+            <Wrench className="absolute top-4 left-10 text-orange-400 transform rotate-45" size={32} />
+            <Hammer className="absolute top-8 right-20 text-orange-400 transform -rotate-12" size={28} />
+            <Drill className="absolute bottom-6 left-1/4 text-orange-400 transform rotate-12" size={30} />
+            <Wrench className="absolute bottom-4 right-10 text-orange-400 transform -rotate-45" size={26} />
+            <Hammer className="absolute top-1/2 left-1/3 text-orange-400 transform rotate-90" size={24} />
+            <Drill className="absolute top-6 right-1/3 text-orange-400 transform -rotate-30" size={32} />
+          </div>
+          
+          <div className="container mx-auto px-6 py-8 relative z-10">
             <div className="text-center">
-              <h1 className="text-4xl font-bold mb-1 tracking-tight text-white">Casa Mais</h1>
-              <p className="text-lg text-blue-100">Material de Construção</p>
+              <h1 className="text-6xl font-bold mb-2 tracking-tight text-white">Casa Mais</h1>
+              <p className="text-2xl text-blue-100">Material de Construção</p>
             </div>
           </div>
         </header>
@@ -214,9 +232,17 @@ function App() {
                 <h2 className="text-3xl font-bold text-gray-800 mb-6">Empresas Parceiras</h2>
                 
                 <div className="grid grid-cols-2 gap-4">
-                  {brands.map((brand, index) => (
-                    <div key={index} className="bg-gray-50 rounded-xl p-4 text-center hover:bg-gray-100 transition-colors duration-200">
-                      <p className="font-semibold text-gray-700">{brand}</p>
+                  {brandLogos.map((brand, index) => (
+                    <div key={index} className="bg-gray-50 rounded-xl p-4 text-center hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center h-20">
+                      {brand.logo ? (
+                        <img 
+                          src={brand.logo} 
+                          alt={brand.name}
+                          className="max-h-12 max-w-full object-contain"
+                        />
+                      ) : (
+                        <p className="font-semibold text-gray-700">{brand.name}</p>
+                      )}
                     </div>
                   ))}
                 </div>
