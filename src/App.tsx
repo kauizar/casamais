@@ -57,12 +57,23 @@ function App() {
       item: 'Parafusos 6x40mm',
       vendor: 'Felipe',
       date: '2025-01-15'
+    },
+    {
+      id: '2',
+      item: 'Tinta Branca 18L',
+      vendor: 'João',
+      date: '2025-01-16'
+    },
+    {
+      id: '3',
+      item: 'Cimento Portland',
+      vendor: 'Kauan',
+      date: '2025-01-17'
     }
   ]);
 
   const [newDelivery, setNewDelivery] = useState({
     clientName: '',
-    clientPhone: '',
     product: '',
     observation: '',
     address: '',
@@ -99,7 +110,6 @@ function App() {
     setDeliveries([...deliveries, delivery]);
     setNewDelivery({
       clientName: '',
-      clientPhone: '',
       product: '',
       observation: '',
       address: '',
@@ -135,20 +145,18 @@ function App() {
   };
 
   const openWhatsApp = () => {
-    window.open('https://wa.me/5513933034700', '_blank');
+    window.open('https://wa.me/5513933034707', '_blank');
   };
 
   if (currentPage === 'home') {
     return (
       <div className="min-h-screen bg-gray-800">
-        {/* Header */}
+        {/* Header - Menor */}
         <header className="bg-blue-900 text-white shadow-xl">
-          <div className="container mx-auto px-6 py-8">
+          <div className="container mx-auto px-6 py-4">
             <div className="text-center">
-              <div className="inline-block bg-orange-500 p-6 rounded-2xl mb-4 border-4 border-orange-400 shadow-lg">
-                <h1 className="text-5xl font-bold mb-2 tracking-tight text-white">Casa Mais</h1>
-                <p className="text-xl text-orange-100">Material de Construção</p>
-              </div>
+              <h1 className="text-4xl font-bold mb-1 tracking-tight text-white">Casa Mais</h1>
+              <p className="text-lg text-blue-100">Material de Construção</p>
             </div>
           </div>
         </header>
@@ -175,7 +183,7 @@ function App() {
                   <Phone className="text-orange-600" size={24} />
                   <div>
                     <p className="font-semibold text-gray-800">Telefone</p>
-                    <p className="text-gray-600">(13) 3303-4700</p>
+                    <p className="text-gray-600">(13) 3303-4707</p>
                   </div>
                 </div>
 
@@ -188,7 +196,7 @@ function App() {
                 </div>
 
                 <div className="bg-green-50 p-6 rounded-2xl border-2 border-green-200">
-                  <p className="text-2xl font-bold text-green-800 mb-2">🤔 Alguma dúvida?</p>
+                  <p className="text-2xl font-bold text-green-800 mb-2">Alguma dúvida?</p>
                   <p className="text-lg font-semibold text-green-700 mb-4">Chame no nosso WhatsApp!</p>
                   
                   <button 
@@ -281,16 +289,6 @@ function App() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Telefone do Cliente</label>
-                <input
-                  type="text"
-                  value={newDelivery.clientPhone}
-                  onChange={(e) => setNewDelivery({...newDelivery, clientPhone: e.target.value})}
-                  className="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-              </div>
-
-              <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Produto do Cliente</label>
                 <input
                   type="text"
@@ -357,6 +355,7 @@ function App() {
         <div className="container mx-auto max-w-4xl">
           <div className="bg-white rounded-2xl shadow-2xl p-8">
             <h2 className="text-3xl font-bold text-gray-800 mb-6">Marcar o que está faltando</h2>
+            <p className="text-gray-600 mb-6">Itens reportados por todos os vendedores</p>
             
             <div className="mb-8">
               <div className="flex space-x-4">
@@ -467,7 +466,6 @@ function App() {
                   <div className="flex justify-between items-start">
                     <div className="flex-1">
                       <h4 className="font-semibold text-gray-800 text-lg">{delivery.clientName}</h4>
-                      <p className="text-gray-600">Telefone: {delivery.clientPhone}</p>
                       <p className="text-gray-600">Produto: {delivery.product}</p>
                       <p className="text-gray-600">Endereço: {delivery.address}</p>
                       <p className="text-gray-600">Data de Entrega: {new Date(delivery.deliveryDate).toLocaleDateString('pt-BR')}</p>
