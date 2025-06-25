@@ -74,6 +74,7 @@ function App() {
 
   const [newDelivery, setNewDelivery] = useState({
     clientName: '',
+    clientPhone: '',
     product: '',
     observation: '',
     address: '',
@@ -85,8 +86,8 @@ function App() {
   const brandLogos = [
     { name: 'Quartzolit', logo: '/new-logo-quartzolit_0.png' },
     { name: 'Irwin', logo: '/irwin-logo.png' },
-    { name: 'Lorenzetti', logo: '/lorenzetti.png' },
-    { name: 'Cauê', logo: '/193312-auto-262.png' },
+    { name: 'Lorenzetti', logo: '/lorenzetti copy.png' },
+    { name: 'Cauê', logo: '/site-caue-1668607058.jpg' },
     { name: 'Astra', logo: '/images (2).png' },
     { name: 'Tramontina', logo: null },
     { name: 'Votoran', logo: null },
@@ -109,7 +110,6 @@ function App() {
     const delivery: Delivery = {
       id: Date.now().toString(),
       ...newDelivery,
-      clientPhone: '',
       registrationDate: today,
       vendor: selectedVendor,
       status: 'pending'
@@ -118,6 +118,7 @@ function App() {
     setDeliveries([...deliveries, delivery]);
     setNewDelivery({
       clientName: '',
+      clientPhone: '',
       product: '',
       observation: '',
       address: '',
@@ -161,19 +162,21 @@ function App() {
       <div className="min-h-screen bg-gray-800">
         {/* Header - Maior com ferramentas decorativas */}
         <header className="bg-blue-900 text-white shadow-xl relative overflow-hidden">
-          {/* Ferramentas decorativas */}
-          <div className="absolute inset-0 opacity-10">
-            <Wrench className="absolute top-4 left-10 text-orange-400 transform rotate-45" size={32} />
-            <Hammer className="absolute top-8 right-20 text-orange-400 transform -rotate-12" size={28} />
-            <Drill className="absolute bottom-6 left-1/4 text-orange-400 transform rotate-12" size={30} />
-            <Wrench className="absolute bottom-4 right-10 text-orange-400 transform -rotate-45" size={26} />
-            <Hammer className="absolute top-1/2 left-1/3 text-orange-400 transform rotate-90" size={24} />
-            <Drill className="absolute top-6 right-1/3 text-orange-400 transform -rotate-30" size={32} />
+          {/* Ferramentas decorativas com laranja mais forte */}
+          <div className="absolute inset-0 opacity-15">
+            <Wrench className="absolute top-4 left-10 text-orange-500 transform rotate-45" size={32} />
+            <Hammer className="absolute top-8 right-20 text-orange-500 transform -rotate-12" size={28} />
+            <Drill className="absolute bottom-6 left-1/4 text-orange-500 transform rotate-12" size={30} />
+            <Wrench className="absolute bottom-4 right-10 text-orange-500 transform -rotate-45" size={26} />
+            <Hammer className="absolute top-1/2 left-1/3 text-orange-500 transform rotate-90" size={24} />
+            <Drill className="absolute top-6 right-1/3 text-orange-500 transform -rotate-30" size={32} />
+            <Wrench className="absolute top-1/3 left-1/2 text-orange-500 transform rotate-180" size={28} />
+            <Hammer className="absolute bottom-1/3 right-1/4 text-orange-500 transform rotate-45" size={26} />
           </div>
           
-          <div className="container mx-auto px-6 py-8 relative z-10">
+          <div className="container mx-auto px-6 py-12 relative z-10">
             <div className="text-center">
-              <h1 className="text-6xl font-bold mb-2 tracking-tight text-white">Casa Mais</h1>
+              <h1 className="text-6xl font-bold mb-3 tracking-tight text-white">Casa Mais</h1>
               <p className="text-2xl text-blue-100">Material de Construção</p>
             </div>
           </div>
@@ -214,7 +217,7 @@ function App() {
                 </div>
 
                 <div className="bg-green-50 p-6 rounded-2xl border-2 border-green-200">
-                  <p className="text-2xl font-bold text-green-800 mb-2">Alguma dúvida?</p>
+                  <p className="text-2xl font-bold text-green-800 mb-2">Conheça nossos produtos!</p>
                   <p className="text-lg font-semibold text-green-700 mb-4">Chame no nosso WhatsApp!</p>
                   
                   <button 
@@ -310,6 +313,16 @@ function App() {
                   type="text"
                   value={newDelivery.clientName}
                   onChange={(e) => setNewDelivery({...newDelivery, clientName: e.target.value})}
+                  className="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Telefone do Cliente</label>
+                <input
+                  type="text"
+                  value={newDelivery.clientPhone}
+                  onChange={(e) => setNewDelivery({...newDelivery, clientPhone: e.target.value})}
                   className="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
@@ -492,6 +505,7 @@ function App() {
                   <div className="flex justify-between items-start">
                     <div className="flex-1">
                       <h4 className="font-semibold text-gray-800 text-lg">{delivery.clientName}</h4>
+                      <p className="text-gray-600">Telefone: {delivery.clientPhone}</p>
                       <p className="text-gray-600">Produto: {delivery.product}</p>
                       <p className="text-gray-600">Endereço: {delivery.address}</p>
                       <p className="text-gray-600">Data de Entrega: {new Date(delivery.deliveryDate).toLocaleDateString('pt-BR')}</p>
