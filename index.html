@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Casa Mais Mongaguá — Materiais de Construção</title>
+<title>Casa Mais Mongaguá | Materiais de Construção</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -226,10 +226,11 @@
     /* Topbar: oculta */
     .topbar{display:none}
 
+    /* Logotipo: removida no celular */
+    .logo{display:none}
+
     /* Header e navegação */
     .header .container{flex-direction:column;align-items:center;text-align:center;gap:10px;padding:12px 14px}
-    .logo{justify-content:center}
-    .logo img{height:46px}
     .nav{width:100%;display:flex;justify-content:flex-start;gap:18px;flex-wrap:nowrap;overflow-x:auto;padding:6px 0 8px;-webkit-overflow-scrolling:touch}
     .nav a{white-space:nowrap;font-size:.88rem}
     .nav .btn{width:auto;padding:11px 18px;font-size:.85rem;white-space:nowrap}
@@ -254,6 +255,13 @@
     .seg-grid,.dif-grid,.dep-grid{grid-template-columns:1fr;gap:16px}
     .seg-card,.dif-card,.dep-card{padding:22px 18px}
     .dif-card .num{font-size:2.6rem}
+
+    /* Segmentos: título ao lado do ícone */
+    .seg-card{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px}
+    .seg-card .icon{margin-bottom:0;flex-shrink:0}
+    .seg-card h3{margin:0;flex:1 1 auto;text-align:left}
+    .seg-card ul{flex-basis:100%;margin-bottom:0}
+    .seg-card a{flex-basis:100%;margin-top:4px}
 
     /* Passos (Entregas): lista horizontal com número à esquerda */
     .passos{grid-template-columns:1fr;gap:0;margin-bottom:32px}
@@ -285,7 +293,6 @@
   /* --- Celulares pequenos (até 480px) --- */
   @media(max-width:480px){
     .header .container{padding:10px}
-    .logo img{height:40px}
     .nav{gap:14px;font-size:.82rem}
     .wa-float{width:50px;height:50px;bottom:16px;right:16px;font-size:1.4rem}
   }
@@ -296,7 +303,7 @@
   <!-- TOPBAR -->
   <div class="topbar">
     <div class="container">
-      <span>📍 R. Ubatuba, 959 — Balneário Agenor de Campos, Mongaguá/SP</span>
+      <span>📍 R. Ubatuba, 959, Balneário Agenor de Campos, Mongaguá/SP</span>
       <span>🕗 Seg a Sáb 8h às 19h · Dom 9h às 14h30 &nbsp;|&nbsp; <a href="https://wa.me/5513997605968">📞 (13) 99760-5968</a></span>
     </div>
   </div>
@@ -339,7 +346,7 @@
       </div>
       <div class="hero-img">
         <img src="fachada-casa-mais.jpg" alt="Fachada da Casa Mais Mongaguá" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="hero-img--placeholder" style="display:none">Foto da loja — adicione fachada-casa-mais.jpg na mesma pasta</div>
+        <div class="hero-img--placeholder" style="display:none">Foto da loja: adicione fachada-casa-mais.jpg na mesma pasta</div>
       </div>
     </div>
   </section>
@@ -412,7 +419,7 @@
           <span class="num">04</span>
           <div class="icon">🚚</div>
           <h3>Entregas grátis</h3>
-          <p>Levamos seu material até sua casa sem custo em Mongaguá — rápido e sem dor de cabeça.</p>
+          <p>Levamos seu material até sua casa sem custo em Mongaguá: rápido e sem dor de cabeça.</p>
         </div>
       </div>
     </div>
@@ -499,7 +506,7 @@
         <div class="loc-info">
           <div class="loc-card">
             <h3>📍 Endereço</h3>
-            <p>R. Ubatuba, 959 — Balneário Agenor de Campos<br>Mongaguá/SP, 11735-570</p>
+            <p>R. Ubatuba, 959, Balneário Agenor de Campos<br>Mongaguá/SP, 11735-570</p>
             <a href="https://maps.google.com/?q=R.+Ubatuba,+959,+Balne%C3%A1rio+Agenor+de+Campos,+Mongagu%C3%A1+-+SP" target="_blank" rel="noopener">Abrir no Google Maps →</a>
           </div>
           <div class="loc-card">
@@ -511,7 +518,7 @@
             <p><a href="https://wa.me/5513997605968">(13) 99760-5968 (WhatsApp)</a></p>
           </div>
           <div class="loc-photo">
-            <img src="fachada-loja.jpg" alt="Foto da loja Casa Mais" onerror="this.style.display='none';this.parentElement.textContent='Foto da loja — adicione fachada-loja.jpg na mesma pasta'">
+            <img src="fachada-loja.jpg" alt="Foto da loja Casa Mais" onerror="this.style.display='none';this.parentElement.textContent='Foto da loja: adicione fachada-loja.jpg na mesma pasta'">
           </div>
         </div>
       </div>
@@ -536,7 +543,7 @@
         </details>
         <details>
           <summary>Preciso agendar para fazer pedido?</summary>
-          <p>Não. É só chamar no WhatsApp ou passar na loja — sem agendamento e sem burocracia.</p>
+          <p>Não. É só chamar no WhatsApp ou passar na loja, sem agendamento e sem burocracia.</p>
         </details>
       </div>
     </div>
@@ -568,7 +575,7 @@
           <h4>Endereço</h4>
           <p>R. Ubatuba, 959</p>
           <p>Balneário Agenor de Campos</p>
-          <p>Mongaguá/SP — 11735-570</p>
+          <p>Mongaguá/SP, 11735-570</p>
         </div>
         <div>
           <h4>Horário</h4>
