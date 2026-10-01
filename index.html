@@ -8,6 +8,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+  /* ============================================================
+     1. DESIGN TOKENS
+     ============================================================ */
   :root{
     --azul-marinho:#0B2545;
     --azul-aco:#2E6E9E;
@@ -20,6 +23,10 @@
     --sombra:0 10px 30px rgba(11,37,69,.12);
     --sombra-laranja:0 10px 25px rgba(249,115,22,.35);
   }
+
+  /* ============================================================
+     2. RESET / BASE
+     ============================================================ */
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{font-family:'Inter',sans-serif;color:var(--grafite);background:var(--branco);line-height:1.6}
@@ -28,21 +35,9 @@
   img{max-width:100%;display:block}
   .container{max-width:1140px;margin:0 auto;padding:0 20px}
 
-  /* ===== TOPBAR ===== */
-  .topbar{background:var(--grafite);color:#cbd5e1;font-size:13.5px;padding:8px 0}
-  .topbar .container{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-  .topbar a{color:#fff;font-weight:600}
-  .topbar a:hover{color:var(--laranja)}
-
-  /* ===== HEADER ===== */
-  .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid #ece7de}
-  .header .container{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px}
-  .logo img{height:52px;width:auto;border-radius:var(--raio);object-fit:cover}
-  .logo-text{font-family:'Archivo Black',sans-serif;font-size:1.3rem;color:var(--azul-marinho);line-height:1.1}
-  .logo-text span{display:block;font-size:.75rem;letter-spacing:3px;color:var(--laranja);text-transform:uppercase}
-  .nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
-  .nav a{font-size:.9rem;font-weight:600;color:var(--azul-marinho);padding-bottom:3px;border-bottom:2px solid transparent;transition:border-color .2s}
-  .nav a:hover{border-color:var(--laranja)}
+  /* ============================================================
+     3. BOTÕES
+     ============================================================ */
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Archivo',sans-serif;font-weight:700;font-size:.95rem;padding:13px 26px;border-radius:999px;border:none;cursor:pointer;transition:all .25s ease;text-align:center}
   .btn--primary{background:var(--laranja);color:#fff;box-shadow:var(--sombra-laranja)}
   .btn--primary:hover{transform:translateY(-2px);background:#ea6a0c}
@@ -51,7 +46,30 @@
   .btn--dark-outline{background:transparent;color:var(--azul-marinho);border:2px solid var(--azul-aco)}
   .btn--dark-outline:hover{background:var(--azul-marinho);color:#fff}
 
-  /* ===== HERO ===== */
+  /* ============================================================
+     4. BARRA SUPERIOR (TOPBAR)
+     ============================================================ */
+  .topbar{background:var(--grafite);color:#cbd5e1;font-size:13.5px;padding:8px 0}
+  .topbar .container{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .topbar a{color:#fff;font-weight:600}
+  .topbar a:hover{color:var(--laranja)}
+
+  /* ============================================================
+     5. HEADER / NAVEGAÇÃO
+     ============================================================ */
+  .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid #ece7de}
+  .header .container{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px}
+  .logo{display:flex;align-items:center}
+  .logo img{height:52px;width:auto;border-radius:var(--raio);object-fit:cover}
+  .logo-text{font-family:'Archivo Black',sans-serif;font-size:1.3rem;color:var(--azul-marinho);line-height:1.1}
+  .logo-text span{display:block;font-size:.75rem;letter-spacing:3px;color:var(--laranja);text-transform:uppercase}
+  .nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+  .nav a{font-size:.9rem;font-weight:600;color:var(--azul-marinho);padding-bottom:3px;border-bottom:2px solid transparent;transition:border-color .2s;white-space:nowrap}
+  .nav a:hover{border-color:var(--laranja)}
+
+  /* ============================================================
+     6. HERO
+     ============================================================ */
   .hero{background:linear-gradient(135deg,#0B2543 0%,#123A63 100%);color:#fff;position:relative;overflow:hidden;padding:80px 0}
   .hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
   .hero .container{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
@@ -70,7 +88,9 @@
   .hero .container>*{animation:fadeInUp .7s ease both}
   .hero .container>*:nth-child(2){animation-delay:.15s}
 
-  /* ===== SEÇÕES GERAIS ===== */
+  /* ============================================================
+     7. SEÇÕES GERAIS
+     ============================================================ */
   section{padding:76px 0}
   .section-head{text-align:center;max-width:640px;margin:0 auto 48px}
   .section-head .badge{display:inline-block;background:var(--laranja);color:#fff;font-size:.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:999px;margin-bottom:14px}
@@ -78,7 +98,7 @@
   .section-head p{color:#5b6472;margin-top:10px}
   .bg-bege{background:var(--bege)}
 
-  /* ===== FUNDO AZUL (igual ao hero) ===== */
+  /* Fundo azul (igual ao hero) */
   .bg-azul{background:linear-gradient(135deg,#0B2543 0%,#123A63 100%);color:#fff}
   .bg-azul .section-head h2{color:#fff}
   .bg-azul .section-head p{color:#c9d8ea}
@@ -92,7 +112,9 @@
   .bg-azul .dep-card strong{color:#fff}
   .bg-azul .dep-card span{color:#9fb4cc}
 
-  /* ===== SEGMENTOS ===== */
+  /* ============================================================
+     8. SEGMENTOS
+     ============================================================ */
   .seg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
   .seg-card{background:var(--bege);border-radius:var(--raio);padding:28px 22px;transition:all .2s ease}
   .seg-card:hover{transform:translateY(-5px);box-shadow:var(--sombra);background:#fff}
@@ -104,7 +126,9 @@
   .seg-card a{font-size:.9rem;font-weight:700;color:var(--azul-aco)}
   .seg-card a:hover{color:var(--laranja)}
 
-  /* ===== DIFERENCIAIS ===== */
+  /* ============================================================
+     9. DIFERENCIAIS
+     ============================================================ */
   .dif-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
   .dif-card{background:#fff;border-radius:var(--raio);padding:30px 24px;position:relative;overflow:hidden;box-shadow:var(--sombra)}
   .dif-card .num{position:absolute;top:8px;right:16px;font-family:'Archivo Black',sans-serif;font-size:3.4rem;color:rgba(46,110,158,.12)}
@@ -112,7 +136,9 @@
   .dif-card h3{color:var(--azul-marinho);font-size:1.05rem;margin-bottom:8px}
   .dif-card p{font-size:.9rem;color:#5b6472}
 
-  /* ===== ENTREGAS ===== */
+  /* ============================================================
+     10. ENTREGAS (COMO FUNCIONA)
+     ============================================================ */
   .passos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:40px}
   .passo{text-align:center;padding:0 10px}
   .passo .num{width:56px;height:56px;border-radius:50%;background:var(--azul-marinho);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Archivo Black',sans-serif;font-size:1.3rem;margin:0 auto 16px}
@@ -120,7 +146,9 @@
   .passo p{font-size:.92rem;color:#5b6472}
   .cta-center{text-align:center}
 
-  /* ===== DEPOIMENTOS ===== */
+  /* ============================================================
+     11. DEPOIMENTOS
+     ============================================================ */
   .dep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .dep-card{background:#fff;border-radius:var(--raio);padding:30px 26px;box-shadow:var(--sombra);position:relative}
   .dep-card .aspas{font-family:'Archivo Black',sans-serif;font-size:3rem;color:rgba(46,110,158,.25);line-height:1;position:absolute;top:14px;right:22px}
@@ -128,7 +156,9 @@
   .dep-card strong{display:block;color:var(--azul-marinho);font-size:.95rem}
   .dep-card span{font-size:.82rem;color:#8a93a0}
 
-  /* ===== LOCALIZAÇÃO ===== */
+  /* ============================================================
+     12. LOCALIZAÇÃO
+     ============================================================ */
   .loc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:stretch}
   .loc-map{border-radius:var(--raio);overflow:hidden;box-shadow:var(--sombra);min-height:340px}
   .loc-map iframe{width:100%;height:100%;min-height:340px;border:0}
@@ -140,7 +170,9 @@
   .loc-photo{border:2px dashed var(--azul-aco);border-radius:var(--raio);min-height:150px;display:flex;align-items:center;justify-content:center;color:#7b8794;font-size:.85rem;text-align:center;padding:16px;overflow:hidden;background:var(--bege)}
   .loc-photo img{width:100%;height:100%;object-fit:cover}
 
-  /* ===== FAQ ===== */
+  /* ============================================================
+     13. FAQ
+     ============================================================ */
   .faq{max-width:760px;margin:0 auto}
   .faq details{background:#fff;border-radius:var(--raio);box-shadow:var(--sombra);padding:20px 24px;margin-bottom:14px;cursor:pointer}
   .faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;font-family:'Archivo',sans-serif;font-weight:700;color:var(--azul-marinho);font-size:1rem}
@@ -149,13 +181,17 @@
   .faq details[open] summary::after{transform:rotate(45deg)}
   .faq details p{padding-top:12px;color:#4a5462;font-size:.93rem}
 
-  /* ===== CTA FINAL ===== */
+  /* ============================================================
+     14. CTA FINAL
+     ============================================================ */
   .cta-final{background:linear-gradient(135deg,#0B2543 0%,#123A63 100%);color:#fff;position:relative;overflow:hidden;text-align:center;padding:80px 0}
   .cta-final::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
   .cta-final .container{position:relative}
   .cta-final h2{font-family:'Archivo Black',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);max-width:680px;margin:0 auto 28px}
 
-  /* ===== FOOTER ===== */
+  /* ============================================================
+     15. FOOTER
+     ============================================================ */
   .footer{background:var(--grafite);color:#aab4bf;padding:56px 0 0;font-size:.92rem}
   .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:32px;padding-bottom:40px}
   .footer h4{color:#fff;font-family:'Archivo',sans-serif;margin-bottom:14px;font-size:1rem}
@@ -166,11 +202,17 @@
   .footer p{margin-bottom:6px}
   .footer .base{border-top:1px solid rgba(255,255,255,.1);padding:18px 0;font-size:.82rem;text-align:center;color:#7c8691}
 
-  /* ===== WHATSAPP FLUTUANTE ===== */
+  /* ============================================================
+     16. BOTÃO FLUTUANTE WHATSAPP
+     ============================================================ */
   .wa-float{position:fixed;bottom:26px;right:26px;z-index:99;width:60px;height:60px;border-radius:50%;background:var(--whatsapp);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.8rem;box-shadow:0 10px 25px rgba(37,211,102,.45);transition:transform .2s}
   .wa-float:hover{transform:scale(1.08)}
 
-  /* ===== RESPONSIVO ===== */
+  /* ============================================================
+     17. RESPONSIVIDADE (ORGANIZADA)
+     ============================================================ */
+
+  /* --- Tablet (até 1024px) --- */
   @media(max-width:1024px){
     .hero .container{grid-template-columns:1fr}
     .hero-img{order:-1}
@@ -178,98 +220,74 @@
     .loc-grid{grid-template-columns:1fr}
     .footer-grid{grid-template-columns:1fr 1fr}
   }
+
+  /* --- Celular (até 768px) — TUDO em um único bloco --- */
   @media(max-width:768px){
-    .header .container{flex-direction:column;align-items:flex-start}
-    .nav{width:100%;justify-content:flex-start;gap:14px;font-size:.85rem;flex-wrap:wrap}
-    .nav .btn{width:100%}
-    .hero{padding:56px 0}
-    .seg-grid,.dif-grid,.passos,.dep-grid{grid-template-columns:1fr}
-    .footer-grid{grid-template-columns:1fr}
-    .btn{width:100%}
-    .hero-actions{flex-direction:column}
+    /* Topbar: oculta */
+    .topbar{display:none}
 
-    /* ===== OTIMIZAÇÃO MOBILE ===== */
+    /* Header e navegação */
+    .header .container{flex-direction:column;align-items:center;text-align:center;gap:10px;padding:12px 14px}
+    .logo{justify-content:center}
+    .logo img{height:46px}
+    .nav{width:100%;display:flex;justify-content:flex-start;gap:18px;flex-wrap:nowrap;overflow-x:auto;padding:6px 0 8px;-webkit-overflow-scrolling:touch}
+    .nav a{white-space:nowrap;font-size:.88rem}
+    .nav .btn{width:auto;padding:11px 18px;font-size:.85rem;white-space:nowrap}
+    .nav::-webkit-scrollbar{height:0}
 
-/* Topbar: empilha e centraliza em telas pequenas */
-@media(max-width:480px){
-  .topbar .container{flex-direction:column;text-align:center;gap:4px;font-size:12.5px}
-}
+    /* Hero */
+    .hero{padding:44px 0}
+    .hero h1{font-size:1.7rem;line-height:1.25}
+    .hero p.sub{font-size:.95rem}
+    .hero-actions{flex-direction:column;gap:10px}
+    .hero-actions .btn{width:100%}
+    .trust{flex-direction:column;gap:8px;align-items:flex-start}
+    .hero-img img{min-height:220px}
+    .hero-img--placeholder{min-height:240px}
 
-/* Header: logo e nav mais compactos */
-@media(max-width:768px){
-  .header .container{padding:10px 14px}
-  .logo img{height:44px}
-  .nav{width:100%;overflow-x:auto;justify-content:flex-start;gap:16px;padding-bottom:6px;-webkit-overflow-scrolling:touch}
-  .nav a{white-space:nowrap;font-size:.85rem}
-  .nav .btn{width:auto;padding:10px 16px;font-size:.85rem;white-space:nowrap}
-}
+    /* Seções */
+    section{padding:48px 0}
+    .section-head{margin-bottom:32px}
+    .section-head h2{font-size:1.5rem}
 
-/* Hero: reduz espaçamento e tamanho da fonte */
-@media(max-width:768px){
-  .hero{padding:44px 0}
-  .hero h1{font-size:1.7rem;line-height:1.25}
-  .hero p.sub{font-size:.95rem}
-  .hero-actions{flex-direction:column;gap:10px}
-  .hero-actions .btn{width:100%}
-  .trust{flex-direction:column;gap:8px;align-items:flex-start}
-  .hero-img img{min-height:220px}
-}
+    /* Grids → 1 coluna */
+    .seg-grid,.dif-grid,.dep-grid{grid-template-columns:1fr;gap:16px}
+    .seg-card,.dif-card,.dep-card{padding:22px 18px}
+    .dif-card .num{font-size:2.6rem}
 
-/* Seções: reduz padding vertical */
-@media(max-width:768px){
-  section{padding:48px 0}
-  .section-head{margin-bottom:32px}
-  .section-head h2{font-size:1.5rem}
-}
+    /* Passos (Entregas): lista horizontal com número à esquerda */
+    .passos{grid-template-columns:1fr;gap:0;margin-bottom:32px}
+    .passo{text-align:left;display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(11,37,69,.1)}
+    .passo:last-child{border-bottom:none}
+    .passo .num{margin:0;flex-shrink:0}
+    .passo h3{margin-bottom:4px}
+    .passo p{font-size:.9rem}
 
-/* Cards: mais espaço interno e fonte legível */
-@media(max-width:768px){
-  .seg-card,.dif-card,.dep-card,.loc-card{padding:22px 18px}
-  .seg-card h3,.dif-card h3{font-size:1rem}
-  .dif-card .num{font-size:2.6rem}
-}
+    /* Localização */
+    .loc-map,.loc-map iframe{min-height:260px}
+    .loc-photo{min-height:130px}
 
-/* Passos (Entregas): empilha com alinhamento à esquerda */
-@media(max-width:768px){
-  .passo{text-align:left;padding:0;display:flex;gap:16px;align-items:flex-start}
-  .passo .num{margin:0;flex-shrink:0}
-  .passo h3{margin-bottom:4px}
-}
+    /* FAQ */
+    .faq details{padding:16px 18px}
+    .faq summary{font-size:.95rem;line-height:1.4}
 
-/* Localização: mapa ocupa altura fixa menor */
-@media(max-width:768px){
-  .loc-map,.loc-map iframe{min-height:260px}
-  .loc-photo{min-height:120px}
-}
+    /* CTA final */
+    .cta-final{padding:52px 0}
+    .cta-final h2{font-size:1.4rem;line-height:1.3}
+    .cta-final .btn{width:100%}
 
-/* FAQ: summary quebra linha corretamente */
-@media(max-width:768px){
-  .faq details{padding:16px 18px}
-  .faq summary{font-size:.95rem;line-height:1.4}
-}
+    /* Footer */
+    .footer{padding:40px 0 0}
+    .footer-grid{grid-template-columns:1fr;gap:26px;text-align:center}
+    .footer .base{padding:16px 12px}
+  }
 
-/* CTA final: fonte menor */
-@media(max-width:768px){
-  .cta-final{padding:52px 0}
-  .cta-final h2{font-size:1.4rem;line-height:1.3}
-}
-
-/* Footer: empilha e centraliza */
-@media(max-width:768px){
-  .footer{padding:40px 0 0}
-  .footer-grid{grid-template-columns:1fr;gap:24px;text-align:center}
-  .footer .base{font-size:.78rem}
-}
-
-/* Botão flutuante do WhatsApp: menor e não cobre conteúdo */
-@media(max-width:480px){
-  .wa-float{width:52px;height:52px;bottom:18px;right:18px;font-size:1.5rem}
-}
-
-/* Esconde a barra superior no celular */
-@media(max-width:768px){
-  .topbar{display:none}
-}
+  /* --- Celulares pequenos (até 480px) --- */
+  @media(max-width:480px){
+    .header .container{padding:10px}
+    .logo img{height:40px}
+    .nav{gap:14px;font-size:.82rem}
+    .wa-float{width:50px;height:50px;bottom:16px;right:16px;font-size:1.4rem}
   }
 </style>
 </head>
@@ -363,7 +381,7 @@
     </div>
   </section>
 
-  <!-- DIFERENCIAIS (agora com fundo azul) -->
+  <!-- DIFERENCIAIS -->
   <section id="diferenciais" class="bg-azul">
     <div class="container">
       <div class="section-head">
@@ -411,18 +429,24 @@
       <div class="passos">
         <div class="passo">
           <div class="num">1</div>
-          <h3>Chame no WhatsApp</h3>
-          <p>Envie sua lista de materiais e tire dúvidas com a nossa equipe.</p>
+          <div>
+            <h3>Chame no WhatsApp</h3>
+            <p>Envie sua lista de materiais e tire dúvidas com a nossa equipe.</p>
+          </div>
         </div>
         <div class="passo">
           <div class="num">2</div>
-          <h3>Confirme produtos e preço</h3>
-          <p>Receba o orçamento na hora e confirme os itens e o valor.</p>
+          <div>
+            <h3>Confirme produtos e preço</h3>
+            <p>Receba o orçamento na hora e confirme os itens e o valor.</p>
+          </div>
         </div>
         <div class="passo">
           <div class="num">3</div>
-          <h3>Receba em casa</h3>
-          <p>Entregamos grátis em Mongaguá, direto no seu endereço.</p>
+          <div>
+            <h3>Receba em casa</h3>
+            <p>Entregamos grátis em Mongaguá, direto no seu endereço.</p>
+          </div>
         </div>
       </div>
       <div class="cta-center">
@@ -431,7 +455,7 @@
     </div>
   </section>
 
-  <!-- DEPOIMENTOS (agora com fundo azul) -->
+  <!-- DEPOIMENTOS -->
   <section id="depoimentos" class="bg-azul">
     <div class="container">
       <div class="section-head">
