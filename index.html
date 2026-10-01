@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Mais Mongaguá — Materiais de Construção</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --azul-marinho:#0B2545;
+    --azul-aco:#2E6E9E;
+    --laranja:#F97316;
+    --bege:#F7F3EC;
+    --grafite:#23272B;
+    --branco:#FFFFFF;
+    --whatsapp:#25D366;
+    --raio:12px;
+    --sombra:0 10px 30px rgba(11,37,69,.12);
+    --sombra-laranja:0 10px 25px rgba(249,115,22,.35);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;color:var(--grafite);background:var(--branco);line-height:1.6}
+  h1,h2,h3,h4{font-family:'Archivo',sans-serif;line-height:1.2}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
+  .container{max-width:1140px;margin:0 auto;padding:0 20px}
+
+  /* ===== TOPBAR ===== */
+  .topbar{background:var(--grafite);color:#cbd5e1;font-size:13.5px;padding:8px 0}
+  .topbar .container{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .topbar a{color:#fff;font-weight:600}
+  .topbar a:hover{color:var(--laranja)}
+
+  /* ===== HEADER ===== */
+  .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid #ece7de}
+  .header .container{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px}
+  .logo img{height:52px;width:auto;border-radius:var(--raio);object-fit:cover}
+  .logo-text{font-family:'Archivo Black',sans-serif;font-size:1.3rem;color:var(--azul-marinho);line-height:1.1}
+  .logo-text span{display:block;font-size:.75rem;letter-spacing:3px;color:var(--laranja);text-transform:uppercase}
+  .nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+  .nav a{font-size:.9rem;font-weight:600;color:var(--azul-marinho);padding-bottom:3px;border-bottom:2px solid transparent;transition:border-color .2s}
+  .nav a:hover{border-color:var(--laranja)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Archivo',sans-serif;font-weight:700;font-size:.95rem;padding:13px 26px;border-radius:999px;border:none;cursor:pointer;transition:all .25s ease;text-align:center}
+  .btn--primary{background:var(--laranja);color:#fff;box-shadow:var(--sombra-laranja)}
+  .btn--primary:hover{transform:translateY(-2px);background:#ea6a0c}
+  .btn--outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55)}
+  .btn--outline:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+  .btn--dark-outline{background:transparent;color:var(--azul-marinho);border:2px solid var(--azul-aco)}
+  .btn--dark-outline:hover{background:var(--azul-marinho);color:#fff}
+
+  /* ===== HERO ===== */
+  .hero{background:linear-gradient(135deg,#0B2543 0%,#123A63 100%);color:#fff;position:relative;overflow:hidden;padding:80px 0}
+  .hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+  .hero .container{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .hero h1{font-family:'Archivo Black',sans-serif;font-size:clamp(2rem,4.2vw,3.1rem);margin-bottom:18px}
+  .hero h1 .destaque{color:var(--laranja)}
+  .hero p.sub{font-size:1.05rem;color:#c9d8ea;max-width:520px;margin-bottom:28px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+  .microcopy{font-size:.85rem;color:#8fa9c7;margin-bottom:26px}
+  .trust{list-style:none;display:flex;gap:22px;flex-wrap:wrap}
+  .trust li{display:flex;gap:8px;align-items:center;font-size:.9rem;font-weight:600}
+  .trust li span{color:var(--laranja);font-size:1.1rem}
+  .hero-img{border-radius:var(--raio);overflow:hidden;box-shadow:var(--sombra)}
+  .hero-img img{width:100%;height:100%;object-fit:cover;min-height:320px}
+  .hero-img--placeholder{min-height:340px;background:rgba(255,255,255,.06);border:2px dashed rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;color:#8fa9c7;font-size:.9rem;text-align:center;padding:20px;border-radius:var(--raio)}
+  @keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+  .hero .container>*{animation:fadeInUp .7s ease both}
+  .hero .container>*:nth-child(2){animation-delay:.15s}
+
+  /* ===== SEÇÕES GERAIS ===== */
+  section{padding:76px 0}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 48px}
+  .section-head .badge{display:inline-block;background:var(--laranja);color:#fff;font-size:.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:999px;margin-bottom:14px}
+  .section-head h2{font-family:'Archivo Black',sans-serif;font-size:clamp(1.6rem,3vw,2.3rem);color:var(--azul-marinho)}
+  .section-head p{color:#5b6472;margin-top:10px}
+  .bg-bege{background:var(--bege)}
+
+  /* ===== FUNDO AZUL (igual ao hero) ===== */
+  .bg-azul{background:linear-gradient(135deg,#0B2543 0%,#123A63 100%);color:#fff}
+  .bg-azul .section-head h2{color:#fff}
+  .bg-azul .section-head p{color:#c9d8ea}
+  .bg-azul .dif-card{background:rgba(255,255,255,.06);box-shadow:none}
+  .bg-azul .dif-card .num{color:rgba(255,255,255,.14)}
+  .bg-azul .dif-card h3{color:#fff}
+  .bg-azul .dif-card p{color:#c9d8ea}
+  .bg-azul .dep-card{background:rgba(255,255,255,.06);box-shadow:none}
+  .bg-azul .dep-card .aspas{color:rgba(255,255,255,.25)}
+  .bg-azul .dep-card p{color:#e8eef5}
+  .bg-azul .dep-card strong{color:#fff}
+  .bg-azul .dep-card span{color:#9fb4cc}
+
+  /* ===== SEGMENTOS ===== */
+  .seg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .seg-card{background:var(--bege);border-radius:var(--raio);padding:28px 22px;transition:all .2s ease}
+  .seg-card:hover{transform:translateY(-5px);box-shadow:var(--sombra);background:#fff}
+  .seg-card .icon{width:54px;height:54px;border-radius:50%;background:var(--azul-marinho);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px}
+  .seg-card h3{color:var(--azul-marinho);margin-bottom:10px}
+  .seg-card ul{list-style:none;margin-bottom:14px}
+  .seg-card li{font-size:.9rem;color:#4a5462;padding-left:18px;position:relative}
+  .seg-card li::before{content:'•';color:var(--laranja);position:absolute;left:2px;font-size:1.1rem}
+  .seg-card a{font-size:.9rem;font-weight:700;color:var(--azul-aco)}
+  .seg-card a:hover{color:var(--laranja)}
+
+  /* ===== DIFERENCIAIS ===== */
+  .dif-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .dif-card{background:#fff;border-radius:var(--raio);padding:30px 24px;position:relative;overflow:hidden;box-shadow:var(--sombra)}
+  .dif-card .num{position:absolute;top:8px;right:16px;font-family:'Archivo Black',sans-serif;font-size:3.4rem;color:rgba(46,110,158,.12)}
+  .dif-card .icon{width:52px;height:52px;border-radius:12px;background:var(--azul-aco);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:18px}
+  .dif-card h3{color:var(--azul-marinho);font-size:1.05rem;margin-bottom:8px}
+  .dif-card p{font-size:.9rem;color:#5b6472}
+
+  /* ===== ENTREGAS ===== */
+  .passos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:40px}
+  .passo{text-align:center;padding:0 10px}
+  .passo .num{width:56px;height:56px;border-radius:50%;background:var(--azul-marinho);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Archivo Black',sans-serif;font-size:1.3rem;margin:0 auto 16px}
+  .passo h3{color:var(--azul-marinho);margin-bottom:8px}
+  .passo p{font-size:.92rem;color:#5b6472}
+  .cta-center{text-align:center}
+
+  /* ===== DEPOIMENTOS ===== */
+  .dep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .dep-card{background:#fff;border-radius:var(--raio);padding:30px 26px;box-shadow:var(--sombra);position:relative}
+  .dep-card .aspas{font-family:'Archivo Black',sans-serif;font-size:3rem;color:rgba(46,110,158,.25);line-height:1;position:absolute;top:14px;right:22px}
+  .dep-card p{font-size:.95rem;color:#3a4450;margin-bottom:18px;font-style:italic}
+  .dep-card strong{display:block;color:var(--azul-marinho);font-size:.95rem}
+  .dep-card span{font-size:.82rem;color:#8a93a0}
+
+  /* ===== LOCALIZAÇÃO ===== */
+  .loc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:stretch}
+  .loc-map{border-radius:var(--raio);overflow:hidden;box-shadow:var(--sombra);min-height:340px}
+  .loc-map iframe{width:100%;height:100%;min-height:340px;border:0}
+  .loc-info{display:flex;flex-direction:column;gap:16px}
+  .loc-card{background:#fff;border-radius:var(--raio);padding:22px 24px;box-shadow:var(--sombra)}
+  .loc-card h3{color:var(--azul-marinho);font-size:1rem;display:flex;gap:8px;align-items:center;margin-bottom:6px}
+  .loc-card p,.loc-card a{font-size:.93rem;color:#4a5462}
+  .loc-card a{color:var(--azul-aco);font-weight:700}
+  .loc-photo{border:2px dashed var(--azul-aco);border-radius:var(--raio);min-height:150px;display:flex;align-items:center;justify-content:center;color:#7b8794;font-size:.85rem;text-align:center;padding:16px;overflow:hidden;background:var(--bege)}
+  .loc-photo img{width:100%;height:100%;object-fit:cover}
+
+  /* ===== FAQ ===== */
+  .faq{max-width:760px;margin:0 auto}
+  .faq details{background:#fff;border-radius:var(--raio);box-shadow:var(--sombra);padding:20px 24px;margin-bottom:14px;cursor:pointer}
+  .faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;font-family:'Archivo',sans-serif;font-weight:700;color:var(--azul-marinho);font-size:1rem}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:'+';font-size:1.5rem;color:var(--laranja);transition:transform .3s ease;flex-shrink:0}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq details p{padding-top:12px;color:#4a5462;font-size:.93rem}
+
+  /* ===== CTA FINAL ===== */
+  .cta-final{background:linear-gradient(135deg,#0B2543 0%,#123A63 100%);color:#fff;position:relative;overflow:hidden;text-align:center;padding:80px 0}
+  .cta-final::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+  .cta-final .container{position:relative}
+  .cta-final h2{font-family:'Archivo Black',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);max-width:680px;margin:0 auto 28px}
+
+  /* ===== FOOTER ===== */
+  .footer{background:var(--grafite);color:#aab4bf;padding:56px 0 0;font-size:.92rem}
+  .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:32px;padding-bottom:40px}
+  .footer h4{color:#fff;font-family:'Archivo',sans-serif;margin-bottom:14px;font-size:1rem}
+  .footer a{color:#cdd5de}
+  .footer a:hover{color:var(--laranja)}
+  .footer .brand-text{font-family:'Archivo Black',sans-serif;color:#fff;font-size:1.15rem}
+  .footer .brand-text span{color:var(--laranja)}
+  .footer p{margin-bottom:6px}
+  .footer .base{border-top:1px solid rgba(255,255,255,.1);padding:18px 0;font-size:.82rem;text-align:center;color:#7c8691}
+
+  /* ===== WHATSAPP FLUTUANTE ===== */
+  .wa-float{position:fixed;bottom:26px;right:26px;z-index:99;width:60px;height:60px;border-radius:50%;background:var(--whatsapp);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.8rem;box-shadow:0 10px 25px rgba(37,211,102,.45);transition:transform .2s}
+  .wa-float:hover{transform:scale(1.08)}
+
+  /* ===== RESPONSIVO ===== */
+  @media(max-width:1024px){
+    .hero .container{grid-template-columns:1fr}
+    .hero-img{order:-1}
+    .seg-grid,.dif-grid{grid-template-columns:repeat(2,1fr)}
+    .loc-grid{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:768px){
+    .header .container{flex-direction:column;align-items:flex-start}
+    .nav{width:100%;justify-content:flex-start;gap:14px;font-size:.85rem;flex-wrap:wrap}
+    .nav .btn{width:100%}
+    .hero{padding:56px 0}
+    .seg-grid,.dif-grid,.passos,.dep-grid{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr}
+    .btn{width:100%}
+    .hero-actions{flex-direction:column}
+  }
+</style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <span>📍 R. Ubatuba, 959 — Balneário Agenor de Campos, Mongaguá/SP</span>
+      <span>🕗 Seg a Sáb 8h às 19h · Dom 9h às 14h30 &nbsp;|&nbsp; <a href="https://wa.me/5513997605968">📞 (13) 99760-5968</a></span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="logo-casa-mais.png" alt="Casa Mais Mongaguá" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="logo-text" style="display:none">CASA MAIS<span>Mongaguá</span></span>
+      </a>
+      <nav class="nav">
+        <a href="#segmentos">Segmentos</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#entregas">Entregas</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#localizacao">Localização</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://wa.me/5513997605968" class="btn btn--primary">Chamar no WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div>
+        <h1>Elétrica, hidráulica, tintas e ferramentas com o <span class="destaque">melhor preço</span> de Mongaguá.</h1>
+        <p class="sub">Tudo o que você precisa para sua obra ou reforma em um só lugar, com atendimento rápido e entrega grátis.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/5513997605968" class="btn btn--primary">💬 Pedir orçamento no WhatsApp</a>
+          <a href="#localizacao" class="btn btn--outline">Ver localização</a>
+        </div>
+        <p class="microcopy">Atendimento rápido · Orçamento na hora</p>
+        <ul class="trust">
+          <li><span>✓</span> Maior diversidade da região</li>
+          <li><span>✓</span> Entregas grátis</li>
+          <li><span>✓</span> Melhores preços</li>
+        </ul>
+      </div>
+      <div class="hero-img">
+        <img src="fachada-casa-mais.jpg" alt="Fachada da Casa Mais Mongaguá" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="hero-img--placeholder" style="display:none">Foto da loja — adicione fachada-casa-mais.jpg na mesma pasta</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEGMENTOS -->
+  <section id="segmentos">
+    <div class="container">
+      <div class="section-head">
+        <span class="badge">Segmentos</span>
+        <h2>O que você encontra aqui</h2>
+        <p>As principais categorias para sua obra ou reforma, sempre com variedade e estoque completo.</p>
+      </div>
+      <div class="seg-grid">
+        <div class="seg-card">
+          <div class="icon">💡</div>
+          <h3>Elétrica</h3>
+          <ul><li>Fios e cabos</li><li>Disjuntores e quadros</li><li>Tomadas e interruptores</li></ul>
+          <a href="https://wa.me/5513997605968">Preciso de material elétrico →</a>
+        </div>
+        <div class="seg-card">
+          <div class="icon">🚿</div>
+          <h3>Hidráulica</h3>
+          <ul><li>Canos e conexões</li><li>Registros e torneiras</li><li>Caixas d'água e bombas</li></ul>
+          <a href="https://wa.me/5513997605968">Preciso de material hidráulico →</a>
+        </div>
+        <div class="seg-card">
+          <div class="icon">🎨</div>
+          <h3>Tintas</h3>
+          <ul><li>Tintas e vernizes</li><li>Massas e seladores</li><li>Acessórios de pintura</li></ul>
+          <a href="https://wa.me/5513997605968">Preciso de tintas →</a>
+        </div>
+        <div class="seg-card">
+          <div class="icon">🛠️</div>
+          <h3>Ferramentas</h3>
+          <ul><li>Ferramentas manuais</li><li>Furadeiras e acessórios</li><li>EPI e itens de segurança</li></ul>
+          <a href="https://wa.me/5513997605968">Preciso de ferramentas →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS (agora com fundo azul) -->
+  <section id="diferenciais" class="bg-azul">
+    <div class="container">
+      <div class="section-head">
+        <span class="badge">Diferenciais</span>
+        <h2>Por que escolher a Casa Mais</h2>
+        <p>Vantagens que fazem diferença no dia a dia de quem constrói e reforma.</p>
+      </div>
+      <div class="dif-grid">
+        <div class="dif-card">
+          <span class="num">01</span>
+          <div class="icon">📦</div>
+          <h3>Maior diversidade da região</h3>
+          <p>Estoque completo com as principais marcas e produtos para qualquer etapa da obra.</p>
+        </div>
+        <div class="dif-card">
+          <span class="num">02</span>
+          <div class="icon">💰</div>
+          <h3>Melhores preços</h3>
+          <p>Compra justa e condições especiais para quem leva maior volume ou paga à vista.</p>
+        </div>
+        <div class="dif-card">
+          <span class="num">03</span>
+          <div class="icon">📍</div>
+          <h3>Fácil acesso</h3>
+          <p>Localização central em Mongaguá, com estacionamento fácil e atendimento próximo.</p>
+        </div>
+        <div class="dif-card">
+          <span class="num">04</span>
+          <div class="icon">🚚</div>
+          <h3>Entregas grátis</h3>
+          <p>Levamos seu material até sua casa sem custo em Mongaguá — rápido e sem dor de cabeça.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENTREGAS -->
+  <section id="entregas">
+    <div class="container">
+      <div class="section-head">
+        <span class="badge">Entregas</span>
+        <h2>Como funciona</h2>
+        <p>Do pedido à entrega em 3 passos simples.</p>
+      </div>
+      <div class="passos">
+        <div class="passo">
+          <div class="num">1</div>
+          <h3>Chame no WhatsApp</h3>
+          <p>Envie sua lista de materiais e tire dúvidas com a nossa equipe.</p>
+        </div>
+        <div class="passo">
+          <div class="num">2</div>
+          <h3>Confirme produtos e preço</h3>
+          <p>Receba o orçamento na hora e confirme os itens e o valor.</p>
+        </div>
+        <div class="passo">
+          <div class="num">3</div>
+          <h3>Receba em casa</h3>
+          <p>Entregamos grátis em Mongaguá, direto no seu endereço.</p>
+        </div>
+      </div>
+      <div class="cta-center">
+        <a href="https://wa.me/5513997605968" class="btn btn--primary">Pedir meu material agora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS (agora com fundo azul) -->
+  <section id="depoimentos" class="bg-azul">
+    <div class="container">
+      <div class="section-head">
+        <span class="badge">Depoimentos</span>
+        <h2>O que dizem nossos clientes</h2>
+      </div>
+      <div class="dep-grid">
+        <div class="dep-card">
+          <span class="aspas">"</span>
+          <p>Comprei todo o material da reforma com eles. O preço foi o melhor da cidade e a entrega chegou rapidinho.</p>
+          <strong>Marcos A.</strong>
+          <span>Reforma residencial</span>
+        </div>
+        <div class="dep-card">
+          <span class="aspas">"</span>
+          <p>O pessoal é muito atencioso. Tirei dúvidas no WhatsApp e em poucos minutos já estava com meu pedido confirmado.</p>
+          <strong>Juliana P.</strong>
+          <span>Pintura da casa</span>
+        </div>
+        <div class="dep-card">
+          <span class="aspas">"</span>
+          <p>Sempre encontro o que preciso. Aqui tem a peça que faltava até em dia de domingo.</p>
+          <strong>Ricardo S.</strong>
+          <span>Manutenção predial</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section id="localizacao">
+    <div class="container">
+      <div class="section-head">
+        <span class="badge">Localização</span>
+        <h2>Venha nos visitar</h2>
+      </div>
+      <div class="loc-grid">
+        <div class="loc-map">
+          <iframe src="https://maps.google.com/maps?q=R.%20Ubatuba%2C%20959%2C%20Balne%C3%A1rio%20Agenor%20de%20Campos%2C%20Mongagu%C3%A1%20-%20SP&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <div class="loc-info">
+          <div class="loc-card">
+            <h3>📍 Endereço</h3>
+            <p>R. Ubatuba, 959 — Balneário Agenor de Campos<br>Mongaguá/SP, 11735-570</p>
+            <a href="https://maps.google.com/?q=R.+Ubatuba,+959,+Balne%C3%A1rio+Agenor+de+Campos,+Mongagu%C3%A1+-+SP" target="_blank" rel="noopener">Abrir no Google Maps →</a>
+          </div>
+          <div class="loc-card">
+            <h3>🕗 Horários</h3>
+            <p>Segunda a Sábado: 8h às 19h<br>Domingo: 9h às 14h30</p>
+          </div>
+          <div class="loc-card">
+            <h3>📞 Contato</h3>
+            <p><a href="https://wa.me/5513997605968">(13) 99760-5968 (WhatsApp)</a></p>
+          </div>
+          <div class="loc-photo">
+            <img src="fachada-loja.jpg" alt="Foto da loja Casa Mais" onerror="this.style.display='none';this.parentElement.textContent='Foto da loja — adicione fachada-loja.jpg na mesma pasta'">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="bg-bege">
+    <div class="container">
+      <div class="section-head">
+        <span class="badge">FAQ</span>
+        <h2>Perguntas frequentes</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Funciona em qual horário?</summary>
+          <p>Funcionamos de segunda a sábado, das 8h às 19h, e aos domingos das 9h às 14h30.</p>
+        </details>
+        <details>
+          <summary>E se eu não achar o que procuro?</summary>
+          <p>Temos a maior diversidade da região, mas se faltar algum item, nossa equipe orienta pelo WhatsApp e providencia o mais rápido possível.</p>
+        </details>
+        <details>
+          <summary>Preciso agendar para fazer pedido?</summary>
+          <p>Não. É só chamar no WhatsApp ou passar na loja — sem agendamento e sem burocracia.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final">
+    <div class="container">
+      <h2>Elétrica, hidráulica, tintas e ferramentas com o melhor preço de Mongaguá,<br>e entrega grátis.</h2>
+      <a href="https://wa.me/5513997605968" class="btn btn--primary">Chamar no WhatsApp agora</a>
+      <p class="microcopy" style="margin-top:14px;color:#8fa9c7">Atendimento rápido · Entregas grátis · Melhores preços</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-text">CASA MAIS<span> MONGAGUÁ</span></div>
+          <p style="margin-top:10px">Materiais de construção com o melhor preço da região e entrega grátis em Mongaguá.</p>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <p><a href="https://wa.me/5513997605968">(13) 99760-5968</a></p>
+          <p><a href="https://wa.me/5513997605968">WhatsApp</a></p>
+        </div>
+        <div>
+          <h4>Endereço</h4>
+          <p>R. Ubatuba, 959</p>
+          <p>Balneário Agenor de Campos</p>
+          <p>Mongaguá/SP — 11735-570</p>
+        </div>
+        <div>
+          <h4>Horário</h4>
+          <p>Seg a Sáb: 08h às 19h</p>
+          <p>Dom: 09h às 14h30</p>
+        </div>
+      </div>
+      <div class="base">Casa Mais Mongaguá. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <a href="https://wa.me/5513997605968" class="wa-float" aria-label="Chamar no WhatsApp">💬</a>
+
+</body>
+</html>
